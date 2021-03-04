@@ -21,6 +21,7 @@
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
 </head>
 <body>
     <div id="app">
@@ -75,13 +76,20 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            <div class="container">
-                <div class="row">
-                    @yield('content')
-                </div>
+        <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-md-3 col-lg-3">
+                <ul class="list-unstyled">
+                  <li><a href="{{route('admin.index')}}"> <i class="fas fa-tachometer-alt fa-lg fa-fw"></i> Dashboard</a> </li>
+                  <li><a href="{{route('admin.comics.index')}}"> <i class="fas fa-book-open"></i> Comics</a> </li>
+                </ul>
+              </div>
+              <main class="col-xs-12 col-md-9 col-lg-9 py-4">
+                @yield('content')
+              </main>
             </div>
-        </main>
+          </div>
     </div>
 </body>
 </html>
+
