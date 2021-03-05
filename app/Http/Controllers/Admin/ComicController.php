@@ -41,6 +41,9 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+        if(!$request->hasFile('cover')){
+            return redirect()->route('admin.comics.create')->with('success', 'Inserisci Cover');;
+        }
         $request['slug'] = Str::slug($request->title);
         $data = $request->validate([
             'title' => 'required',
@@ -88,20 +91,30 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        Storage::delete($comic->cover);
-        $data = $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'price' => 'required | numeric | max:999.99',
-            'availability' => 'required',
-            'cover' => 'nullable | image | max:400'
-        ]);
-        $cover = Storage::put('cover_imgs', $request->cover); 
-        $data['cover'] = $cover;
-        $comic->update($data);
+        if ($request->hasFile('cover')) {
+            Storage::delete($comic->cover);
+            $data = $request->validate([
+                'title' => 'required',
+                'description' => 'required',
+                'price' => 'required | numeric | max:999.99',
+                'availability' => 'required',
+                'cover' => 'nullable | image | max:400'
+            ]);
+            $cover = Storage::put('cover_imgs', $request->cover); 
+            $data['cover'] = $cover;
+            $comic->update($data);
+        }else{
+            $data = $request->validate([
+                'title' => 'required',
+                'description' => 'required',
+                'price' => 'required | numeric | max:999.99',
+                'availability' => 'required',
+                'cover' => 'nullable | image | max:400'
+            ]);
+            $comic->update($data);
+        }
         return redirect()->route('admin.comics.show', $comic);
 
-       
     }
 
     /**

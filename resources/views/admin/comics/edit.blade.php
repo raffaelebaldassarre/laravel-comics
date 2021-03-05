@@ -37,7 +37,7 @@
 
         <div class="form-group">
             <label for="price">Prezzo</label>
-            <input type="text" name="price" id="price" value="{{$comic->price}}">
+            <input type="text" name="price" id="price" value="{{$comic->price}}" placeholder="Massimo 999.99€">
         </div>
         @error('price')
         <div class="alert alert-danger">{{ $message }}</div>    
@@ -56,8 +56,8 @@
 
       <div class="form-group">
         <label for="cover">Cover Image</label>
-        <input type="file" class="form-control-file" name="cover" id="cover" placeholder="Add a cover image" aria-describedby="coverImgHelper">
-        <small id="coverImgHelper" class="form-text text-muted">Add a cover image</small>
+        <input type="file" class="form-control-file" name="cover" id="cover" placeholder="Change cover image" aria-describedby="coverImgHelper">
+        <small id="coverImgHelper" class="form-text text-muted">Change cover image</small>
     </div>
     @error('cover')
         <div class="alert alert-danger">{{ $message }}</div>

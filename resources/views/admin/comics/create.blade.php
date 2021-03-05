@@ -36,7 +36,7 @@
 
         <div class="form-group">
             <label for="price">Prezzo</label>
-            <input type="text" name="price" id="price" value="{{ old('price') }}">
+            <input type="text" name="price" id="price" value="{{ old('price') }}" placeholder="Massimo 999.99€">
         </div>
         @error('price')
           <div class="alert alert-danger">{{ $message }}</div>    
@@ -61,6 +61,13 @@
     @error('cover')
         <div class="alert alert-danger">{{ $message }}</div>
     @enderror
+    <div class="col-sm-12">
+      @if(session()->get('success'))
+          <div class="alert alert-success">
+          {{ session()->get('success') }}  
+          </div>
+      @endif
+    </div>
     
 
         <button type="submit" class="btn btn-success">Aggiungi il Comics</button>
