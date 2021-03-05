@@ -1,0 +1,76 @@
+header {
+    border-bottom: 1px solid #ebebeb;
+    .nav-top {
+        width: 100%;
+        height: 40px;
+        background: #0282fa;
+        div {
+            width: 190px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-left: 1px solid #3797f6;
+
+            -webkit-transform-origin: 100% 100%;
+            -ms-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+
+            -webkit-transform: skewX(30deg);
+            -ms-transform: skewX(30deg);
+            transform: skewX(-25deg);
+            &:first-child {
+                background: white;
+            }
+            a {
+                img {
+                    transform: skewX(25deg);
+                    height: 24px;
+                }
+            }
+        }
+    }
+    .nav-bottom {
+        width: 90%;
+        height: 115px;
+        margin: 0 auto;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        div.logo {
+            a {
+                img {
+                    width: 81px;
+                    height: 81px;
+                }
+            }
+        }
+        div.link_nav {
+            a {
+                font-size: 16px;
+                color: #464646;
+                font-family: "Anton", sans-serif;
+                letter-spacing: 1px;
+                font-weight: bold;
+                text-decoration: none;
+                margin: 0 20px;
+                padding-bottom: 50px;
+                &.active,
+                &:hover {
+                    color: #0282fa;
+                }
+                .fas {
+                    color: #0282fa;
+                }
+            }
+        }
+        div.search {
+            font-size: 18px;
+            color: #464646;
+            font-family: "Anton", sans-serif;
+            letter-spacing: 1px;
+            font-weight: bold;
+            border-bottom: 2px solid #0282fa;
+        }
+    }
+}

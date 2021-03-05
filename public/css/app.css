@@ -10944,3 +10944,92 @@ a.text-dark:focus {
   }
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #fff;
+  font-family: "Nunito", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+header {
+  border-bottom: 1px solid #ebebeb;
+}
+
+header .nav-top {
+  width: 100%;
+  height: 40px;
+  background: #0282fa;
+}
+
+header .nav-top div {
+  width: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid #3797f6;
+  transform-origin: 100% 100%;
+  transform: skewX(-25deg);
+}
+
+header .nav-top div:first-child {
+  background: white;
+}
+
+header .nav-top div a img {
+  transform: skewX(25deg);
+  height: 24px;
+}
+
+header .nav-bottom {
+  width: 90%;
+  height: 115px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .nav-bottom div.logo a img {
+  width: 81px;
+  height: 81px;
+}
+
+header .nav-bottom div.link_nav a {
+  font-size: 16px;
+  color: #464646;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 20px;
+  padding-bottom: 50px;
+}
+
+header .nav-bottom div.link_nav a.active,
+header .nav-bottom div.link_nav a:hover {
+  color: #0282fa;
+}
+
+header .nav-bottom div.link_nav a .fas {
+  color: #0282fa;
+}
+
+header .nav-bottom div.search {
+  font-size: 18px;
+  color: #464646;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 1px;
+  font-weight: bold;
+  border-bottom: 2px solid #0282fa;
+}
+

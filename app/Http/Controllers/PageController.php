@@ -10,4 +10,9 @@ class PageController extends Controller
     {
         return view('guests.index');
     }
+
+    public function comics()
+    {
+        return view('guests.comics.index');
+    }
 }
